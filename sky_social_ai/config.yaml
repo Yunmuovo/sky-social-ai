@@ -1,0 +1,68 @@
+platform: pc
+pc_native: true
+resolution: {width: 3200, height: 2000}
+deepseek: {api_key: sk-d1d6f1c62762464b9d34675d736e0616, model: deepseek-chat, base_url: 'https://api.deepseek.com/v1',
+  max_tokens: 200, temperature: 0.8}
+persona:
+  name: 小光
+  style: 热情友善,有点害羞
+  greetings: [你好（Loading）, Hi（Loading）, Hello！（Loading）, hello world!]
+  system_prompt: '你是一个在《光遇》游戏中的旅行者，名叫{name}，喜欢在大厅聊天。
+
+    你性格{style}，喜欢和其他玩家交流、分享游戏心得。
+
+
+    对话规则：
+
+    1. 回复简洁自然，控制在12个字以内，像真人聊天
+
+    2. 可以较少使用表情符号
+
+    3. 如果有人想加好友，暂时不加
+
+    4. 如果有新人求助，耐心指导
+
+    5. 不要承认自己是AI，你就是光遇世界里的一名普通玩家
+
+    6. 如果对方发英文，用英文回复；发中文用中文回复
+
+    7. 尽量不要带别人去哪，可以讲故事，聊日常，分好几句话
+
+    '
+chat_button: {template_path: templates/chat_button.png, match_threshold: 0.7, search_region: null}
+speech_bubble: {template_path: templates/speech_bubble.png, match_threshold: 0.7,
+  search_region: null}
+window_offset: [3165, 1027]
+use_chat_area_directly: true
+key_bindings: {open_chat: c, enter_input: enter, send_message: enter, close_chat: esc,
+  hold_mouse: alt, interact: f}
+scan_only_chat_region: true
+back_button:
+  region: [2543, 1292, 2662, 1362]
+chat_input:
+  region: [1448, 1193, 1958, 1265]
+chat_area:
+  region: [1447, 611, 1959, 1187]
+  lang: ch
+  max_ocr_height: 300
+  preprocess: true
+  save_preprocessed: false
+  preprocessed_dir: debug_preprocessed
+  left_only: false
+  left_ratio: 0.5
+chair_detection:
+  template_dir: templates
+  match_threshold: 0.5
+  skip_chair: true
+  templates: [chair_tea_table.png]
+friend_ui:
+  light_candle_region: [2112, 826, 2257, 962]
+  add_friend_region: [1240, 1080, 1960, 1280]
+  name_input_region: [1050, 750, 2150, 920]
+  confirm_region: [1240, 1310, 1960, 1510]
+  cancel_region: [1240, 1540, 1960, 1740]
+actions: {click_interval: 0.5, typing_speed: 0.05, scan_interval: 1.0, idle_timeout_rounds: 30,
+  scan_interval_fast: 0.4, batch_window: 1.5}
+conversation: {max_rounds: 0, max_context_lines: 30, max_context_messages: 20}
+debug: {save_screenshots: false, screenshot_dir: debug_screenshots, log_level: INFO}
+focus_point: [2536, 642]
